@@ -1,54 +1,140 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <!-- Ảnh sản phẩm -->
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:layout_height="300dp">
 
         <ImageView
-            android:id="@+id/imgProductDetail"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
+            android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_placeholder"/>
+            android:src="@drawable/baseline_photo_camera_24" />
 
+        <!-- Nút back -->
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/bg_circle_light"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="Back" />
+    </FrameLayout>
+
+    <!-- Khối chi tiết kéo xuống tận cuối -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@drawable/bg_white_rounded_top"
+        android:padding="20dp">
+
+        <!-- Tên sản phẩm -->
         <TextView
-            android:id="@+id/tvProductName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Product Name"
-            android:textStyle="bold"
+            android:text="Jan Sflanaganvik sofa"
             android:textSize="20sp"
-            android:layout_marginTop="12dp"/>
+            android:textStyle="bold"
+            android:textColor="#000000" />
 
-        <TextView
-            android:id="@+id/tvPrice"
+        <!-- Giá và số lượng -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Giá -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="$599"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#FF8C00" />
+
+            <!-- Bộ đếm số lượng -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageButton
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_circle_translucent"
+                    android:src="@drawable/ic_remove"
+                    android:contentDescription="Decrease" />
+
+                <TextView
+                    android:layout_width="32dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="16sp"
+                    android:textColor="#000000" />
+
+                <ImageButton
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_circle_translucent"
+                    android:src="@drawable/ic_add"
+                    android:contentDescription="Increase" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Đánh giá -->
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="$999"
-            android:textColor="#FF8C00"
-            android:textSize="18sp"
-            android:layout_marginTop="4dp"/>
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp">
 
-        <!-- Rating + description -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="★ ★ ★ ★ ☆"
+                android:textColor="#FFD700"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  4.6"
+                android:textSize="16sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- Mô tả nền xám -->
         <TextView
-            android:id="@+id/tvDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Mô tả chi tiết sản phẩm ở đây."
-            android:layout_marginTop="12dp"/>
-
-        <Button
-            android:id="@+id/btnAddToCart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Add to bag"
             android:layout_marginTop="16dp"
-            android:backgroundTint="@color/black"
-            android:textColor="@android:color/white" />
+            android:padding="12dp"
+            android:background="#F1F1F1"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consectetur velit at massa vehicula, quis fringilla urna gravida."
+            android:textColor="#666666"
+            android:textSize="14sp"
+            android:backgroundTintMode="src_in"
+            android:backgroundTint="#F1F1F1" />
     </LinearLayout>
-</ScrollView>
+
+    <!-- Nút Add to Bag -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_margin="16dp"
+        android:text="Add to bag"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#000000" />
+</LinearLayout>
